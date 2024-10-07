@@ -1,0 +1,425 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 700,
+  "projection": {"type": "equalEarth"},
+  "params": [
+    {
+    "name": "Income_Above",
+    "value": 0,
+    "bind": {
+    "input": "range",
+    "min": 0,
+    "max": 110000,
+    "step": 100,
+    "name": "Minimum Income: "
+    }
+    }
+  ],
+  "layer": [
+    {
+
+      "data": {
+        "url": "ne_50m_ocean.json",  
+        "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+      },
+      "mark": {"type": "geoshape", "fill": "royalblue"}
+    },
+    {
+      "data": {
+        "url": "ne_50m_admin_0_countries.json",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"},
+      "encoding": {
+        "tooltip":[
+          {"field": "properties.NAME", "type": "nominal", "title": "Data is not available for ","format":""}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "ne_50m_admin_0_countries.json",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+      },
+      
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "cleaned_annual_income.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "Country",
+            "fields": ["income"]
+
+          }
+        }
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "income",
+          "type": "quantitative",
+          "title": "Average Income (USD)",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000, 10000, 30000, 50000, 70000, 95000],
+            "range": ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#cc0000", "#660000"]
+          },
+          "legend": {
+            "titleFont": "Consolas",
+            "titleFontSize": 16,       
+            "labelFontSize": 12,       
+            "symbolSize": 100,         
+            "symbolStrokeWidth": 2,         
+            "padding": 10           
+        },
+        "condition":{
+          "test":"datum.income < Income_Above",
+          "value":"lightgrey"
+        }
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "income", "type": "quantitative", "title": "Average Income","format": "$,.2f"}
+        ]
+        
+      }
+    },
+
+    {
+      "data": {
+        "url": "ne_110m_graticules_30.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "stroke": "darkgrey", "fill":null}
+    },
+
+    {
+      "mark": {
+        "type": "rule",
+        "color": "white",  
+        "strokeWidth": 2  
+      },
+      "encoding": {
+        "longitude": {"field": "start_lon", "type": "quantitative"},  
+        "latitude": {"field": "start_lat", "type": "quantitative"},    
+        "longitude2": {"field": "end_lon"},  
+        "latitude2": {"field": "end_lat"}    
+      },
+      "data": {
+        "values": [
+          {
+            "start_lon": -100,  
+            "start_lat": 40,   
+            "end_lon": -115,     
+            "end_lat": 20    
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",  
+        "shape": "triangle",  
+        "color": "white",  
+        "fill":"white",
+        "size": 200,
+        "angle":45
+
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon", "type": "quantitative"}, 
+        "latitude": {"field": "end_lat", "type": "quantitative"}    
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -100,   
+            "end_lat": 40
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "USA with an "}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -115,      
+            "end_lat": 19      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "average income"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -115,      
+            "end_lat": 16      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "of $71,055.88"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -115,      
+            "end_lat": 13     
+          }
+        ]
+      }
+    },
+    
+    {
+      "mark": {
+        "type": "rule",
+        "color": "white",  
+        "strokeWidth": 2  
+      },
+      "encoding": {
+        "longitude": {"field": "start_lon", "type": "quantitative"},  
+        "latitude": {"field": "start_lat", "type": "quantitative"},    
+        "longitude2": {"field": "end_lon"},  
+        "latitude2": {"field": "end_lat"}    
+      },
+      "data": {
+        "values": [
+          {
+            "start_lon": -9,  
+            "start_lat": 52,   
+            "end_lon": -35,     
+            "end_lat": 35    
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",  
+        "shape": "triangle",  
+        "color": "white",  
+        "fill":"white",
+        "size": 200,
+        "angle":45
+
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon", "type": "quantitative"}, 
+        "latitude": {"field": "end_lat", "type": "quantitative"}    
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -10,   
+            "end_lat": 51
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "Ireland with highest "}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -35,      
+            "end_lat": 32      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "average income"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -35,      
+            "end_lat": 29      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "of $102,001.8"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": -35,      
+            "end_lat": 26     
+          }
+        ]
+      }
+    },
+
+
+    {
+      "mark": {
+        "type": "rule",
+        "color": "white",  
+        "strokeWidth": 2  
+      },
+      "encoding": {
+        "longitude": {"field": "start_lon", "type": "quantitative"},  
+        "latitude": {"field": "start_lat", "type": "quantitative"},    
+        "longitude2": {"field": "end_lon"},  
+        "latitude2": {"field": "end_lat"}    
+      },
+      "data": {
+        "values": [
+          {
+            "start_lon": 125,  
+            "start_lat": -25,   
+            "end_lon": 100,     
+            "end_lat": -25    
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",  
+        "shape": "triangle",  
+        "color": "white",  
+        "fill":"white",
+        "size": 200,
+        "angle":90
+
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon", "type": "quantitative"}, 
+        "latitude": {"field": "end_lat", "type": "quantitative"}    
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": 125,   
+            "end_lat": -25
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "Australia with an "}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": 87,      
+            "end_lat": -22      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "average income"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": 88,      
+            "end_lat": -25      
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",  
+        "color": "white", 
+        "fontSize": 12    
+      },
+      "encoding": {
+        "longitude": {"field": "end_lon"},  
+        "latitude": {"field": "end_lat"},   
+        "text": {"value": "of $60,697.25"}      
+      },
+      "data": {
+        "values": [
+          {
+            "end_lon": 88,      
+            "end_lat": -28     
+          }
+        ]
+      }
+    }
+  ]
+}
