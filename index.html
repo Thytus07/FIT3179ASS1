@@ -11,15 +11,24 @@
             display: flex;
             justify-content: center;
         }
+        h2{
+            text-align: center;
+            font-size: large;
+        }
         div {
             display: flex;
+            border: none;
         }
         .map {
             justify-content: center;
             width: 80%;
         }
-        .all{
+        .violin{
             width: 70%;
+        }
+        .radial{
+            justify-content: center;
+            width: 45%;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -33,8 +42,9 @@
     <h1>Average Annual Income in USD 2022</h1>
     <div class="map" id="map"></div>
     <h1>Migration Arrival and Departure in Australia (2004 Q1 - 2016 Q4)</h1>
-    <div class="all" id="violin"></div>
-    <h1>Migration by Country</h1>
-    <div class="all" id="radial"></div>
+    <div class="violin" id="violin"></div>
+    <h1>Top 5 Migration Destination 2022</h1>
+    <h2>by Percent of Population</h2>
+    <div class="radial" id="radial"></div>
 </body>
 </html>

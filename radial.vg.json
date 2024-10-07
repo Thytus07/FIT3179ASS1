@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A radial chart sorted by percentage with stack, groupby, and as.",
+    "description": "A radial chart sorted by percentage with stack, groupby, and hover interaction.",
     "width": "container",
     "height": 500,
     "data": {
@@ -8,38 +8,50 @@
       "format": {"type": "csv"}
     },
     "layer": [
+        
       {
+        "params": [
+          {
+            "name": "testin",
+            "value":[{"Country": "Kuwait"}],
+            "select": {
+                "type": "point",
+                "fields": ["Country"],
+                "on":"mouseover"
+            }
+          }
+        ],
         "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"},
         "encoding": {
-            "tooltip":[
+          "tooltip": [
             {"field": "Country", "type": "nominal", "title": "Country"},
-            {"field": "Percentage", "type": "quantitative", "title": "Percent of Population", "format":".1%"}
-         ]
+            {"field": "Percentage", "type": "quantitative", "title": "Percent of Population", "format": ".1%"}
+          ]
         }
       },
       {
         "mark": {
           "type": "text",
-          "radiusOffset": -50,  
-          "align": "center",   
+          "radiusOffset": -50,
+          "align": "center",
           "baseline": "middle",
           "fontSize": 18
         },
         "encoding": {
-          "text": {"field": "Percentage", "type": "quantitative",  "format":".1%"},
+          "text": {"field": "Percentage", "type": "quantitative", "format": ".1%"},
           "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
           "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-          "color": {"value": "white"} 
+          "color": {"value": "white"}
         }
       },
       {
         "mark": {
           "type": "text",
-          "radiusOffset": 30,  
-          "align": "left",   
+          "radiusOffset": 30,
+          "align": "left",
           "baseline": "middle",
           "fontSize": 18,
-          "xOffset":-15
+          "xOffset": -15
         },
         "encoding": {
           "text": {"field": "Country", "type": "nominal"},
@@ -47,13 +59,20 @@
           "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}}
         }
       }
-
     ],
     "encoding": {
       "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
       "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
-      "color": {"field": "Country", "type": "nominal", "legend":null},
-      "order": {"field": "Percentage", "type": "quantitative", "sort": "ascending"}
+      "order": {"field": "Percentage", "type": "quantitative", "sort": "ascending"},
+      "color": {
+            "condition": {
+              "param": "testin",
+              "field": "Country",
+              "type": "nominal"
+            },
+            "value": "grey"
+          }
+
     }
   }
   
