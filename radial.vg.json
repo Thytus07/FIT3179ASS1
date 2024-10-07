@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A radial chart sorted by percentage with stack, groupby, and as.",
+    "width": "container",
+    "height": 300,
+    "data": {
+      "url": "percent_imm.csv",
+      "format": {"type": "csv"}
+    },
+    "layer": [
+      {
+        "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+      },
+      {
+        "mark": {
+          "type": "text",
+          "radiusOffset": -23,  
+          "align": "center",   
+          "baseline": "middle",
+          "fontSize": 18
+        },
+        "encoding": {
+          "text": {"field": "Percentage", "type": "quantitative"},
+          "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+          "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+          "color": {"value": "white"} 
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "radiusOffset": 30,  
+          "align": "left",   
+          "baseline": "middle",
+          "fontSize": 18,
+          "xOffset":-15
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+          "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}}
+        }
+      }
+
+    ],
+    "encoding": {
+      "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+      "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Country", "type": "nominal", "legend":null},
+      "order": {"field": "Percentage", "type": "quantitative", "sort": "ascending"}
+    }
+  }
+  
