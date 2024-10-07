@@ -58,7 +58,7 @@
             "tooltip": [
               {"field": "year", "type": "nominal", "title": "Year"},
               {"field": "quarter", "type": "nominal", "title": "Quarter"},
-              {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ".0f"},
+              {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ","},
               {"field": "status", "type": "nominal", "title": "Status"}
             ]
           }
@@ -119,7 +119,7 @@
         "tooltip": [
           {"field": "year", "type": "nominal", "title": "Year"},
           {"field": "quarter", "type": "nominal", "title": "Quarter"},
-          {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ".0f"},
+          {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ","},
           {"field": "status", "type": "nominal", "title": "Status"}
         ]
       }
