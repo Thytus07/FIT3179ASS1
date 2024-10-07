@@ -42,7 +42,7 @@
             },
             "color": {
               "field": "status",
-              "scale": {"range": ["#675193", "#ca8861"]},
+              "scale": {"range": ["royalblue", "#FF4C4C"]},
               "legend": {
                 "title": "Status",
                 "titleFont": "Consolas",

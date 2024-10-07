@@ -7,8 +7,7 @@
       "url": "percent_imm.csv",
       "format": {"type": "csv"}
     },
-    "layer": [
-        
+    "layer": [ 
       {
         "params": [
           {
@@ -72,7 +71,6 @@
             },
             "value": "grey"
           }
-
     }
   }
   
