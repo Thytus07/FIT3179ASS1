@@ -1,18 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "description": "Sankey Chart by David Bacci: https://www.linkedin.com/in/davbacci/",
-    "width": 1000,
+    "width":1000,
     "height": 800,
     "padding": {"bottom": 20, "left": 20, "right": 30, "top": 40},
-    "title": {
-      "text": "Countries Migration Origin and Destination 2022",
-      "color": "black",
-      "fontSize": 32,
-      "fontStyle":"Consolas",
-      "dy": 0,
-      "fontWeight": "bold",
-      "offset": 30
-    },
     "background": "#fafafa",
     "signals": [
       {
@@ -30,25 +21,25 @@
       {
         "name": "input",
         "values": [
-          {"category": "India","stack": 1,"sort": "descending","labels": "left"},
-          {"category": "China_","stack": 1,"sort": "descending","labels": "left"},
-          {"category": "Mexico","stack": 1,"sort": "descending","labels": "left"},
-          {"category": "Philippines", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Bangladesh", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Pakistan", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "El Salvador", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Egypt","stack": 1,"sort": "descending","labels": "left"},
-          {"category": "United Kingdom", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "New Zealand", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Poland", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Turkey", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Russia", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Kazakhstan", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Syrian", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Vietnam", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Korea", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Brazil", "stack": 1, "sort": "descending", "labels": "left"},
-          {"category": "Indonesia", "stack": 1, "sort": "descending", "labels": "left"},
+          {"category": "India","stack": 1,"sort": 2,"labels": "left"},
+          {"category": "China_","stack": 1,"sort": 3,"labels": "left"},
+          {"category": "Mexico","stack": 1,"sort": 1,"labels": "left"},
+          {"category": "Philippines", "stack": 1, "sort": 6, "labels": "left"},
+          {"category": "Bangladesh", "stack": 1, "sort": 5, "labels": "left"},
+          {"category": "Pakistan", "stack": 1, "sort": 4, "labels": "left"},
+          {"category": "El Salvador", "stack": 1, "sort": 1, "labels": "left"},
+          {"category": "Egypt","stack": 1,"sort": 7,"labels": "left"},
+          {"category": "United Kingdom", "stack": 1, "sort": 11, "labels": "left"},
+          {"category": "New Zealand", "stack": 1, "sort": 15, "labels": "left","gap":5},
+          {"category": "Poland", "stack": 1, "sort": 8, "labels": "left"},
+          {"category": "Turkey", "stack": 1, "sort": 9, "labels": "left"},
+          {"category": "Russia", "stack": 1, "sort": 12, "labels": "left"},
+          {"category": "Kazakhstan", "stack": 1, "sort": 13, "labels": "left","gap":5},
+          {"category": "Syrian", "stack": 1, "sort": 14, "labels": "left","gap":5},
+          {"category": "Vietnam", "stack": 1, "sort": 16, "labels": "left","gap":5},
+          {"category": "Korea", "stack": 1, "sort": 17, "labels": "left","gap":5},
+          {"category": "Brazil", "stack": 1, "sort": 18, "labels": "left","gap":5},
+          {"category": "Indonesia", "stack": 1, "sort": 10, "labels": "left"},
           {"category": "USA", "stack": 2, "sort": 1},
           {"category": "UAE", "stack": 2, "sort": 2},
           {"category": "Australia", "stack": 2, "sort": 3},
@@ -56,6 +47,10 @@
           {"category": "Germany", "stack": 2, "sort": 5},
           {"category": "China", "stack": 2, "sort": 6},
           {"category": "Saudi Arabia", "stack": 2, "sort": 3},
+
+
+
+
           {"source": "Mexico", "destination": "USA", "value": 10.8},
           {"source": "India", "destination": "USA", "value": 2.7},
           {"source": "China_", "destination": "USA", "value": 10.8},
@@ -294,7 +289,7 @@
           },
           "hover": {
             "tooltip": {
-              "signal": "{'Name':datum.name, 'Value':format(datum.value) + 'M'}"
+              "signal": "{'Name':datum.name, 'People':format(datum.value,'.1f') + 'M'}"
             },
             "fillOpacity": {"value": 1}
           }
@@ -315,7 +310,7 @@
           "hover": {
             "strokeOpacity": {"value": 1},
             "tooltip": {
-              "signal": "{'Source':datum.source,'Destination':datum.destination, 'Value':format(datum.value, '') + 'M'}"
+              "signal": "{'Origin':datum.source,'Destination':datum.destination, 'People':format(datum.value, '.1f') + 'M'}"
             }
           }
         }
@@ -368,7 +363,7 @@
               "update": {
                 "x": {"value": 0},
                 "y": {"value": 12},
-                "text": {"signal": " datum.value + 'M'"},
+                "text": {"signal": " format(datum.value,'.2f')+ 'M'"},
                 "align": {"signal": "datum.labels=='left'?'right':'left'"}
               }
             }
