@@ -15,3 +15,9 @@ vegaEmbed("#radial", vg_3).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 
 }).catch(console.error);
+
+var vg_4 = "sankey.vg.json";
+vegaEmbed("#sankey", vg_4).then(function(result) {
+// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
+}).catch(console.error);
