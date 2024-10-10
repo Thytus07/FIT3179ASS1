@@ -4,41 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        h1 { text-align: center; }
-        #map,#violin, #radial,#sankey {
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-        }
-        h2{
-            text-align: center;
-            font-size: large;
-        }
-        div {
-            display: flex;
-            border: none;
-        }
-        .map {
-            justify-content: center;
-            width: 80%;
-        }
-        .violin{
-            width: 70%;
-        }
-        .radial{
-            justify-content: center;
-            width: 45%;
-        }
-        .sankey{
-            justify-content: center;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+
     <script src="chart.js"></script>  <!-- Include your external JavaScript file -->
     <title>Annual Income and Immigration Data</title>
 </head>
@@ -52,5 +36,33 @@
     <div class="radial" id="radial"></div>
     <h1>Countries Migration Origin and Destination 2022</h1>
     <div class="sankey" id="sankey"></div>
+
+    <div class="page">
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="violin1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-2">
+                <div class="description description-right">
+                    <h1>Migration Arrival and Departure in Australia <br> (2004 Q1 - 2016 Q4)</h1>
+                </div>
+                    <div class="description description-right">
+                    <p> 
+                        The first and second columns are combined. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                        faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.The first and second columns are combined. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                        faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.The first and second columns are combined. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                        faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.The first and second columns are combined. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+                        faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.
+                    </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
 </body>
 </html>

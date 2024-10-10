@@ -4,7 +4,6 @@
     "width":1000,
     "height": 800,
     "padding": {"bottom": 20, "left": 20, "right": 30, "top": 40},
-    "background": "#fafafa",
     "signals": [
       {
         "name": "standardGap",

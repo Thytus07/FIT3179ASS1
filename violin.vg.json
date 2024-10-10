@@ -11,8 +11,6 @@
   "vconcat": [
     {
       "width": "container",
-      "height": 500,
-      "center": true,
         
           "mark": "bar",
           "encoding": {

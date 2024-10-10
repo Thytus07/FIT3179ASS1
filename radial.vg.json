@@ -12,7 +12,7 @@
         "params": [
           {
             "name": "testin",
-            "value":[{"Country": "Kuwait"}],
+            "value":[{"Country": "Australia"}],
             "select": {
                 "type": "point",
                 "fields": ["Country"],

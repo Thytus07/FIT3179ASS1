@@ -1,0 +1,77 @@
+#map,#violin, #radial,#sankey {
+    margin: 20px auto;
+    display: flex;
+
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    font-size: large;
+}
+div {
+    display: flex;
+    border: none;
+}
+.map {
+    
+    width: 80%;
+}
+.violin{
+    width: 70%;
+}
+.radial{
+    justify-content: center;
+    width: 45%;
+}
+.sankey{
+    justify-content: center;
+    width: 100%;
+}
+
+body *{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+body {
+    background-color: white;
+}
+
+.page {
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
+.vis-container {
+    width: 100%;
+}
+
+.description h2,
+h1 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.description-right {
+    padding-left: 170px;
+}
+
+.description-left {
+    padding-right: 20px;
+    text-align: center;
+}
+
+.pure-g {
+    margin-bottom: 40px;
+}
+
+.small-font {
+    font-size: 14px;
+}
