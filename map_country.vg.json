@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 700,
+  "height": 600,
+  "background":"transparent",
   "projection": {"type": "equalEarth"},
   "params": [
     {
@@ -70,12 +71,14 @@
           },
           "legend": {
             "titleFont": "Consolas",
-            "titleFontSize": 16,       
-            "labelFontSize": 12,       
-            "symbolSize": 100,         
-            "symbolStrokeWidth": 2,         
-            "padding": 10           
-        },
+            "titleFontSize": 16,
+            "labelFontSize": 12,    
+            "symbolStrokeWidth": 5,
+            "padding": 10,
+            "symbolOffset": 1000,
+            "orient": "bottom",
+            "format": "~s"
+          },
         "condition":{
           "test":"datum.income < Income_Above",
           "value":"lightgrey"

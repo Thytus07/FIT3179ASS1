@@ -15,8 +15,9 @@ div {
     border: none;
 }
 .map {
-    
-    width: 80%;
+    justify-content: center;
+    width: 85%;
+
 }
 .violin{
     width: 70%;
@@ -63,6 +64,12 @@ body {
     box-shadow: 0 0 24px rgba(0,0,0,0.15);
     max-width: 85%;
     border-radius: 15px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    width: 100%; /* Ensures both divs take full width */
 }
 
 .vis-container {

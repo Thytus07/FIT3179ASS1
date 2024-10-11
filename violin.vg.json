@@ -67,7 +67,7 @@
     
     {
       "width": "container",
-      "height": 200,
+      "height": 100,
       "mark": {"type":"area","opacity": 0.5, 
       "line":{
         "color":"black",
