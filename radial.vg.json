@@ -2,9 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A radial chart sorted by percentage with stack, groupby, and hover interaction.",
     "width": "container",
-    "height": 500,
+    "height": 350,
+    "background":"transparent",
     "data": {
-      "url": "percent_imm.csv",
+      "url": "https://raw.githubusercontent.com/Thytus07/FIT3179ASS1/refs/heads/main/percent_imm.csv",
       "format": {"type": "csv"}
     },
     "layer": [ 
@@ -31,10 +32,10 @@
       {
         "mark": {
           "type": "text",
-          "radiusOffset": -50,
+          "radiusOffset": -40,
           "align": "center",
           "baseline": "middle",
-          "fontSize": 18
+          "fontSize": 15
         },
         "encoding": {
           "text": {"field": "Percentage", "type": "quantitative", "format": ".1%"},
@@ -50,12 +51,14 @@
           "align": "left",
           "baseline": "middle",
           "fontSize": 18,
+          "fontWeight":600,
           "xOffset": -15
         },
         "encoding": {
           "text": {"field": "Country", "type": "nominal"},
           "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
           "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}}
+          
         }
       }
     ],
@@ -69,8 +72,24 @@
               "field": "Country",
               "type": "nominal"
             },
-            "value": "grey"
+            "value": "grey",
+            "legend":{
+              "title": "Countries",
+              "titleFont": "Consolas",
+              "titleFontSize": 20,
+              "labelFont": "Consolas",
+              "labelFontSize": 16,
+              "symbolSize": 500,
+              "symbolStrokeWidth": 2,
+              "padding": 10,
+              "orient": "right"
+            }
           }
+    },
+    "config": {
+    "view": {
+      "stroke": "transparent"
     }
+  }
   }
   

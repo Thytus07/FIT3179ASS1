@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "description": "Sankey Chart by David Bacci: https://www.linkedin.com/in/davbacci/",
     "width":1000,
-    "height": 800,
-    "padding": {"bottom": 20, "left": 20, "right": 30, "top": 40},
+    "height": 750,
+    "background":"transparent",
     "signals": [
       {
         "name": "standardGap",
@@ -350,7 +350,8 @@
                 "y": {"value": -2},
                 "text": {"field": "name"},
                 "align": {"signal": "datum.labels=='left'?'right':'left'"},
-                "fontWeight": {"value": "normal"}
+                "fontWeight": {"value": "normal"},
+                "fill": {"value": "black"}
               }
             }
           },
@@ -378,29 +379,9 @@
             "x2": {"field": "bounds.x2", "offset": 2},
             "y": {"field": "bounds.y1", "offset": -2},
             "y2": {"field": "bounds.y2", "offset": 2},
-            "fill": {"value": "white"},
+            "fill": {"value": "transparent"},
             "opacity": {"value": 0.8},
             "cornerRadius": {"value": 4}
-          }
-        }
-      },
-      {
-        "type": "text",
-        "data": [{}],
-        "encode": {
-          "update": {
-            "text": {
-              "value": [
-                "Source: https://www.microsoft.com/en-us/investor/earnings/fy-2023-q2/income-statements",
-                "Dataviz: David Bacci"
-              ]
-            },
-            "align": {"value": "left"},
-            "lineHeight": {"value": 16},
-            "fill": {"value": "#595959"},
-            "x": {"signal": "-150"},
-            "y": {"signal": "height +70"},
-            "fontSize": {"value": 10}
           }
         }
       }
