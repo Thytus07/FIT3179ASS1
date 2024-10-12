@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A population pyramid showing migration in and out of Australia across quarters, ensuring negative values for 'out' status.",
   "data": { "url": "aus_imm_in_out.csv" },
-  
   "background":"transparent",
   "transform": [
     {
@@ -13,7 +12,6 @@
   "vconcat": [
     {
       "width": "container",
-        
           "mark": "bar",
           "encoding": {
             "x": {
@@ -52,7 +50,7 @@
                 "symbolSize": 500,
                 "symbolStrokeWidth": 2,
                 "padding": 10,
-                "offset":45,
+                "offset":75,
                 "orient": "right"
               }
             },
