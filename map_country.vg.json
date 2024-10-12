@@ -13,7 +13,7 @@
     "min": 0,
     "max": 110000,
     "step": 100,
-    "name": "Minimum Income: "
+    "name": "Minimum Income (USD): "
     }
     }
   ],

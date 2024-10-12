@@ -1,0 +1,104 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 600,
+    "background":"transparent",
+    "projection": {"type": "equalEarth"},
+    "params": [
+        {
+        "name": "Internet_Above",
+        "value": 0,
+        "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "name": "Minimum Percentage (%): "
+        }
+        }
+    ],
+    "layer": [
+      {
+        "data": {
+          "url": "ne_50m_ocean.json",
+          "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+        },
+        "mark": {"type": "geoshape", "fill": "royalblue"}
+      },
+      {
+        "data": {
+          "url": "ne_50m_admin_0_countries.json",
+          "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+        },
+        "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"},
+        "encoding": {
+          "tooltip":[
+            {"field": "properties.NAME", "type": "nominal", "title": "Data is not available for ","format":""}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "ne_50m_admin_0_countries.json",
+          "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
+        },
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "internet.csv",
+                "format": {"type": "csv"}
+              },
+              "key": "Country",
+              "fields": ["Percent"]
+            }
+          }
+        ],
+        "mark": {"type": "geoshape"},
+        "encoding": {
+          "color": {
+            "field": "Percent",
+            "type": "quantitative",
+            "title": "Population Percentage",
+            "scale": {
+              "type": "threshold",
+              "domain": [20,40,60,80,90],
+              "range": ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#cc0000", "#660000"]
+            },
+            "legend": {
+              "titleFont": "Consolas",
+              "titleFontSize": 14,
+              "labelFontSize": 12,    
+              "symbolSize": 200,
+              "symbolStrokeWidth": 5,
+              "padding": 10,
+              "orient": "bottom",
+              "format":""
+            },
+          "condition":{
+            "test":"datum.Percent < Internet_Above",
+            "value":"lightgrey"
+          }
+          },
+          "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "Percent", "type": "quantitative", "title": "Internet Users (%)"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "ne_110m_graticules_30.json",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "stroke": "darkgrey", "fill": null}
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      }
+    }
+  }
+  

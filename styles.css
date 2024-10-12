@@ -108,3 +108,10 @@ h1 {
 .small-font {
     font-size: 14px;
 }
+
+#internet_content .container {
+    display: flex;
+    justify-content: center; /* Center the graph container */
+    align-items: center; /* Center vertically if needed */
+    flex-direction: column; /* Keep elements stacked vertically */
+}
