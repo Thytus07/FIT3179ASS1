@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var vg_1 = "map_country.vg.json";
+    var vg_2 = "pop.vg.json";
     var vg_3 = "radial.vg.json";
     var vg_4 = "sankey.vg.json";
     var vg_5 = "violin.vg.json";
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderVisualizations() {
         vegaEmbed("#map", vg_1).catch(console.error);
+        vegaEmbed("#pop", vg_2).catch(console.error);
         vegaEmbed("#radial", vg_3).catch(console.error);
         vegaEmbed("#sankey", vg_4).catch(console.error);
         vegaEmbed("#violin1", vg_5).catch(console.error);
