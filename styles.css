@@ -54,7 +54,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0 0 24px rgba(0,0,0,0.15);
-    max-width: 85%;
+    width: 85%;
     text-align: center;
     justify-content: center;
     border-radius: 15px;
@@ -125,6 +125,7 @@ h1 {
 
 
 .dropdown {
+    max-width:20%;
     border: 2px solid #007BFF; /* Change the border color */
     border-radius: 10px; /* Rounded edges */
     padding: 10px 40px 10px 10px; /* Padding inside the select; extra padding for the arrow */

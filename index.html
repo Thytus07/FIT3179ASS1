@@ -124,74 +124,89 @@
         </div>
         
     </div>
-
-    <select name="Select" id="Select" class="dropdown">
-        <option value="income">Income</option>
-        <option value="pop_sqm">Population Per Square Meter</option>
-        <option value="internet">Internet</option>
-    </select>
-
-
-    <div class="title-card" id="income_title">
-        <h1>Average Annual Income in USD 2022</h1>
-    </div>
-
-    <div class="page" id="income_content">
+    <p><br><br></p>
+    <div class="page">
         <div class="container">
-        <div class="map" id="map"></div>
-        <div class="description description-right-radial">
-            <p> 
-                As we see on the map, the darker the gradient, the greater the average annual income in USD
-                for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
-                $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
-                like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
-                immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
+            <p style="font-size: 23px;">
+                We have seen the migration rates between countries, and also see which contries are preffered
+                destination countries, and which countries have the most amount of migrants leaving. 
+                As for the destination countries, we would more commonly assume that when moving to a country, 
+                the population density might play a factor, since you wouldn't want to move to a overcrowded country. 
+                However, other factors could effect the migrants choice of country they move to, like the 
+                <span style="font-weight:bold">average income</span>, <span style="font-weight:bold">population density</span>
+                 or the percentage of population which have <span style="font-weight:bold">internet access</span>. 
+                 We can see the effect of all these through the Map visualisations below. <br><br>
+                 (Use the dropdown to navigate between different factors)
             </p>
-        </div>
+            <select name="Select" id="Select" class="dropdown">
+                <option value="income">Income</option>
+                <option value="pop_sqm">Population Per Square Meter</option>
+                <option value="internet">Internet</option>
+            </select>
+
+                <div class="title-card" id="income_title">
+                    <h1>Average Annual Income in USD 2022</h1>
+                </div>
+
+                <div class="page" id="income_content">
+                    <div class="container">
+                    <div class="map" id="map"></div>
+                    <div class="description description-right-radial">
+                        <p> 
+                            As we see on the map, the darker the gradient, the greater the average annual income in USD
+                            for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
+                            $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
+                            like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
+                            immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
+                        </p>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="title-card" id="Pop_title">
+                    <h1>Average Pop 2022</h1>
+                </div>
+
+                <div class="page" id="Pop_content">
+                    <div class="container">
+                    <div class="map" id="pop"></div>
+                    <div class="description description-right-radial">
+                        <p> 
+                            As we see on the map, the darker the gradient, the greater the average annual income in USD
+                            for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
+                            $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
+                            like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
+                            immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
+                        </p>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="title-card" id="internet_title">
+                    <h1>Average internet 2022</h1>
+                </div>
+
+                <div class="page" id="internet_content">
+                    <div class="container">
+                        <div id="internet" class="map"></div>
+                        <div class="description description-right-radial">
+                            <p> 
+                                As we see on the map, the darker the gradient, the greater the average annual income in USD
+                                for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
+                                $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
+                                like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
+                                immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </div>
 
 
-    <div class="title-card" id="Pop_title">
-        <h1>Average Pop 2022</h1>
-    </div>
-
-    <div class="page" id="Pop_content">
-        <div class="container">
-        <div class="map" id="pop"></div>
-        <div class="description description-right-radial">
-            <p> 
-                As we see on the map, the darker the gradient, the greater the average annual income in USD
-                for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
-                $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
-                like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
-                immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
-            </p>
-        </div>
-        </div>
-    </div>
-
-    
-    
-
-    <div class="title-card" id="internet_title">
-        <h1>Average internet 2022</h1>
-    </div>
-
-    <div class="page" id="internet_content">
-        <div class="container">
-            <div id="internet" class="map"></div>
-            <div class="description description-right-radial">
-                <p> 
-                    As we see on the map, the darker the gradient, the greater the average annual income in USD
-                    for that country. Ireland has the highest average annual income with $102,001, the United States of America has 
-                    $71,055, and Australia with $60,697. We see that although USA and Australia are on the higher end of earnings. Countries
-                    like United Arab Emirates (UAE) seem to only earn $44,332 in comparison. So we can attribute some correlation to the average yearly income to the 
-                    immigration appeal of the given country, but as seen through the UAE, there could be some other determining factors. 
-                </p>
-            </div>
-        </div>
-    </div>
     
 
     <p> <br></p>
