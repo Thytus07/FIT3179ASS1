@@ -6,13 +6,13 @@
     "projection": {"type": "equalEarth"},
     "params": [
       {
-        "name": "pop_Above",
+        "name": "pop_above",
         "value": 0,
         "bind": {
           "input": "range",
           "min": 0,
-          "max": 21890,
-          "step": 1000,
+          "max": 1000,
+          "step": 50,
           "name": "Minimum Pop density: "
         }
       }
@@ -68,8 +68,8 @@
             "title": "Population density",
             "scale": {
               "type": "threshold",
-              "domain": [3700, 7300, 11000, 15000, 18000, 21000],
-              "range": ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#cc0000", "#660000"]
+              "domain": [35, 75, 110, 150, 180, 210],
+              "range": ["#ff9999", "#ff6666", "#ff4d4d", "#ff1a1a", "#cc0000", "#990000", "#660000"]
             },
             "legend": {
               "titleFont": "Consolas",
@@ -81,7 +81,7 @@
               "orient": "bottom"
             },
             "condition": {
-              "test": "datum.density < pop_Above",
+              "test": "datum.density < pop_above",
               "value": "lightgrey"
             }
           },

@@ -115,3 +115,10 @@ h1 {
     align-items: center; /* Center vertically if needed */
     flex-direction: column; /* Keep elements stacked vertically */
 }
+
+#Pop_content .container {
+    display: flex;
+    justify-content: center; /* Center the graph container */
+    align-items: center; /* Center vertically if needed */
+    flex-direction: column; /* Keep elements stacked vertically */
+}
