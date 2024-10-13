@@ -122,3 +122,35 @@ h1 {
     align-items: center; /* Center vertically if needed */
     flex-direction: column; /* Keep elements stacked vertically */
 }
+
+
+.dropdown {
+    border: 2px solid #007BFF; /* Change the border color */
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px 40px 10px 10px; /* Padding inside the select; extra padding for the arrow */
+    background-color: #f8f9fa; /* Background color */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    font-family: "Consolas", monospace;
+    appearance: none; /* Remove default styling */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    cursor: pointer; /* Change cursor on hover */
+    position: relative; /* For positioning the arrow */
+    background-image: url('down_arrow.png'); /* URL to your arrow image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 12px 12px; /* Size of the arrow image */
+}
+
+/* Change background color of options on hover */
+.dropdown option {
+    background-color: #f8f9fa; /* Background color for options */
+    color: #333; /* Text color for options */
+}
+
+/* Focus effect */
+.dropdown:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px #0015ff; /* Add a green shadow on focus */
+}
