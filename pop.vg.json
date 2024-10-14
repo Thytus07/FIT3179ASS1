@@ -65,7 +65,7 @@
           "color": {
             "field": "density",
             "type": "quantitative",
-            "title": "Population density",
+            "title": "Population per km² ",
             "scale": {
               "type": "threshold",
               "domain": [35, 75, 110, 150, 180, 210],
@@ -180,7 +180,7 @@
         "data": {
           "values": [
             {
-              "end_lon": -100,      
+              "end_lon": -103,      
               "end_lat": 40    
             }
           ]

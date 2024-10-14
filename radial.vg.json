@@ -26,7 +26,7 @@
           "tooltip": [
             {"field": "Country", "type": "nominal", "title": "Country"},
             {"field": "Percentage", "type": "quantitative", "title": "Percent of Population", "format": ".1%"}
-          ]
+          ] 
         }
       },
       {
@@ -67,23 +67,24 @@
       "radius": {"field": "Percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
       "order": {"field": "Percentage", "type": "quantitative", "sort": "ascending"},
       "color": {
+          "legend":{
+                "title": "Countries",
+                "titleFont": "Consolas",
+                "titleFontSize": 20,
+                "labelFont": "Consolas",
+                "labelFontSize": 16,
+                "symbolSize": 500,
+                "symbolStrokeWidth": 2,
+                "padding": 10,
+                "orient": "right"
+              },
             "condition": {
               "param": "testin",
               "field": "Country",
               "type": "nominal"
             },
-            "value": "grey",
-            "legend":{
-              "title": "Countries",
-              "titleFont": "Consolas",
-              "titleFontSize": 20,
-              "labelFont": "Consolas",
-              "labelFontSize": 16,
-              "symbolSize": 500,
-              "symbolStrokeWidth": 2,
-              "padding": 10,
-              "orient": "right"
-            }
+            "value": "grey"
+            
           }
     },
     "config": {
