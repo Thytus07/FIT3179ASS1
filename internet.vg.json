@@ -276,7 +276,7 @@
           "color": "white",  
           "fill":"white",
           "size": 200,
-          "angle":-35
+          "angle":325
   
         },
         "encoding": {
