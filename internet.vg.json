@@ -93,7 +93,320 @@
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
         "mark": {"type": "geoshape", "stroke": "darkgrey", "fill": null}
+      },
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "USA  92.4% "}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": -100,      
+              "end_lat": 40    
+            }
+          ]
+        }
+      },
+      
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "Australia  97.6% "}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 132,      
+              "end_lat": -25      
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "China 77.3%"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 100,      
+              "end_lat": 35     
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "India"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 80,      
+              "end_lat": 25     
+            }
+          ]
+        }
+      },
+
+
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "62.6%"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 80,      
+              "end_lat": 22     
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "point",  
+          "shape": "triangle",  
+          "color": "white",  
+          "fill":"white",
+          "size": 200,
+          "angle":45
+  
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon", "type": "quantitative"}, 
+          "latitude": {"field": "end_lat", "type": "quantitative"}    
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": -100,   
+              "end_lat": 19
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "white",  
+          "strokeWidth": 2  
+        },
+        "encoding": {
+          "longitude": {"field": "start_lon", "type": "quantitative"},  
+          "latitude": {"field": "start_lat", "type": "quantitative"},    
+          "longitude2": {"field": "end_lon"},  
+          "latitude2": {"field": "end_lat"}    
+        },
+        "data": {
+          "values": [
+            {
+              "start_lon": -100,  
+              "start_lat": 19,   
+              "end_lon": -115,     
+              "end_lat": 5 
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "Mexico  75.1%"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": -115,      
+              "end_lat": 2     
+            }
+          ]
+        }
+      },
+
+
+      {
+        "mark": {
+          "type": "point",  
+          "shape": "triangle",  
+          "color": "white",  
+          "fill":"white",
+          "size": 200,
+          "angle":-35
+  
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon", "type": "quantitative"}, 
+          "latitude": {"field": "end_lat", "type": "quantitative"}    
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 56,   
+              "end_lat": 20
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "rule",
+          "color": "white",  
+          "strokeWidth": 2  
+        },
+        "encoding": {
+          "longitude": {"field": "start_lon", "type": "quantitative"},  
+          "latitude": {"field": "start_lat", "type": "quantitative"},    
+          "longitude2": {"field": "end_lon"},  
+          "latitude2": {"field": "end_lat"}    
+        },
+        "data": {
+          "values": [
+            {
+              "start_lon": 56,  
+              "start_lat": 20,   
+              "end_lon": 65,     
+              "end_lat": 5 
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "UAE  95.2%"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 65,      
+              "end_lat": 3     
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "point",  
+          "shape": "triangle",  
+          "color": "white",  
+          "fill":"white",
+          "size": 200,
+          "angle":45
+  
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon", "type": "quantitative"}, 
+          "latitude": {"field": "end_lat", "type": "quantitative"}    
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": 43,   
+              "end_lat": 20
+            }
+          ]
+        }
+      },
+
+      {
+        "mark": {
+          "type": "rule",
+          "color": "white",  
+          "strokeWidth": 2  
+        },
+        "encoding": {
+          "longitude": {"field": "start_lon", "type": "quantitative"},  
+          "latitude": {"field": "start_lat", "type": "quantitative"},    
+          "longitude2": {"field": "end_lon"},  
+          "latitude2": {"field": "end_lat"}    
+        },
+        "data": {
+          "values": [
+            {
+              "start_lon": 43,  
+              "start_lat": 20,   
+              "end_lon": -10,     
+              "end_lat": -5
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",  
+          "color": "white", 
+          "fontSize": 12    
+        },
+        "encoding": {
+          "longitude": {"field": "end_lon"},  
+          "latitude": {"field": "end_lat"},   
+          "text": {"value": "Saudi Arabia  96.9%"}      
+        },
+        "data": {
+          "values": [
+            {
+              "end_lon": -10,      
+              "end_lat": -8     
+            }
+          ]
+        }
       }
+
+
+
     ],
     "config": {
       "view": {

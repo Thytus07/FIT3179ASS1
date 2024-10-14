@@ -50,7 +50,7 @@
                 "symbolSize": 500,
                 "symbolStrokeWidth": 2,
                 "padding": 10,
-                "offset":75,
+                "offset":30,
                 "orient": "right"
               }
             },

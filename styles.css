@@ -28,10 +28,11 @@ div {
 .radial{
     justify-content: center;
     padding-right: 5%;
+    width: 110%;
 }
 .sankey{
     justify-content: center;
-    width: 120%;
+    width: 100%;
 }
 
 body *{
@@ -107,6 +108,13 @@ h1 {
 
 .small-font {
     font-size: 14px;
+}
+
+#income_content .container {
+    display: flex;
+    justify-content: center; /* Center the graph container */
+    align-items: center; /* Center vertically if needed */
+    flex-direction: column; /* Keep elements stacked vertically */
 }
 
 #internet_content .container {

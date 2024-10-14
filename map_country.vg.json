@@ -71,12 +71,12 @@
           },
           "legend": {
             "titleFont": "Consolas",
-            "titleFontSize": 16,
-            "labelFontSize": 12,    
-            "symbolStrokeWidth": 5,
-            "padding": 10,
-            "symbolOffset": 1000,
-            "orient": "bottom",
+              "titleFontSize": 14,
+              "labelFontSize": 12,    
+              "symbolSize": 200,
+              "symbolStrokeWidth": 5,
+              "padding": 10,
+              "orient": "bottom",
             "format": "~s"
           },
         "condition":{

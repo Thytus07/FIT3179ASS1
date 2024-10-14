@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var vg_6 = "internet.vg.json";
 
     function renderVisualizations() {
-        vegaEmbed("#map", vg_1).catch(console.error);
-        vegaEmbed("#pop", vg_2).catch(console.error);
-        vegaEmbed("#radial", vg_3).catch(console.error);
-        vegaEmbed("#sankey", vg_4).catch(console.error);
-        vegaEmbed("#violin1", vg_5).catch(console.error);
-        vegaEmbed("#internet", vg_6).catch(console.error);
+        vegaEmbed("#map", vg_1, {"actions": false}).catch(console.error);
+        vegaEmbed("#pop", vg_2, {"actions": false}).catch(console.error);
+        vegaEmbed("#radial", vg_3, {"actions": false}).catch(console.error);
+        vegaEmbed("#sankey", vg_4, {"actions": false}).catch(console.error);
+        vegaEmbed("#violin1", vg_5, {"actions": false}).catch(console.error);
+        vegaEmbed("#internet", vg_6, {"actions": false}).catch(console.error);
     }
 
     const Select = document.getElementById("Select");
