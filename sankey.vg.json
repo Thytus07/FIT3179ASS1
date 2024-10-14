@@ -386,6 +386,28 @@
             "cornerRadius": {"value": 4}
           }
         }
+      },
+
+      {
+        "type": "text",
+        "data": [{}],
+        "encode": {
+          "update": {
+            "text": {
+              "value": [
+                "Source: https://worldmigrationreport.iom.int/wmr-2022-interactive/",
+                "Author: Thytus Benjamin",
+                "Date: 16/10/2024"
+              ]
+            },
+            "align": {"value": "left"},
+            "lineHeight": {"value": 16},
+            "fill": {"value": "#595959"},
+            "x": {"signal": "700"},
+            "y": {"signal": "height -40"},
+            "fontSize": {"value": 10}
+          }
+        }
       }
     ],
     "config": {

@@ -13,7 +13,7 @@
           "min": 0,
           "max": 1000,
           "step": 50,
-          "name": "Minimum Pop density: "
+          "name": "Minimum Population Density: "
         }
       }
     ],
@@ -78,7 +78,8 @@
               "symbolSize": 200,
               "symbolStrokeWidth": 5,
               "padding": 10,
-              "orient": "bottom"
+              "orient": "bottom",
+              "format":""
             },
             "condition": {
               "test": "datum.density < pop_above",

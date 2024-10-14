@@ -5,17 +5,17 @@
   "background":"transparent",
   "projection": {"type": "equalEarth"},
   "params": [
-    {
-    "name": "Income_Above",
-    "value": 0,
-    "bind": {
-    "input": "range",
-    "min": 0,
-    "max": 110000,
-    "step": 100,
-    "name": "Minimum Income (USD): "
-    }
-    }
+      {
+      "name": "Income_Above",
+      "value": 0,
+        "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 110000,
+        "step": 100,
+        "name": "Minimum Income (USD): "
+        }
+      }
   ],
   "layer": [
     {

@@ -60,7 +60,7 @@
           "color": {
             "field": "Percent",
             "type": "quantitative",
-            "title": "Population Percentage (%)",
+            "title": "Population Percent (%)",
             "scale": {
               "type": "threshold",
               "domain": [20,40,60,80,90],
@@ -73,8 +73,7 @@
               "symbolSize": 200,
               "symbolStrokeWidth": 5,
               "padding": 10,
-              "orient": "bottom",
-              "format":""
+              "orient": "bottom"
             },
           "condition":{
             "test":"datum.Percent < Internet_Above",
@@ -98,7 +97,7 @@
         "mark": {
           "type": "text",  
           "color": "white", 
-          "fontSize": 12    
+          "fontSize": 12
         },
         "encoding": {
           "longitude": {"field": "end_lon"},  

@@ -163,3 +163,19 @@ h1 {
     outline: none; /* Remove default outline */
     box-shadow: 0 0 5px #0015ff; /* Add a green shadow on focus */
 }
+
+.main_title{
+    font-size: 50px;
+    font-weight: bolder;
+    width: 85%;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(244, 241, 241);
+    box-shadow: 0 0 24px rgba(0,0,0,0.15);
+    margin: auto;
+    border-radius: 15px;
+}
+

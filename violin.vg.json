@@ -2,82 +2,83 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A population pyramid showing migration in and out of Australia across quarters, ensuring negative values for 'out' status.",
   "data": { "url": "aus_imm_in_out.csv" },
-  "background":"transparent",
+  "background": "transparent",
   "transform": [
     {
-      "calculate": "datum.status_num == 2 ? -datum.people : datum.people", 
+      "calculate": "datum.status_num == 2 ? -datum.people : datum.people",
       "as": "signed_people"
     }
   ],
   "vconcat": [
     {
       "width": "container",
-          "mark": "bar",
-          "encoding": {
-            "x": {
-              "field": "year_quarter",
-              "scale": {"domain": {"param": "brush"}},
-              "axis": {
-                "title": "Year and Quarter",
-                "labelAngle": 0,
-                "labelOverlap": "parity",
-                "tickCount": 10, 
-                "labelFont": "Consolas", 
-                "titleFontSize": 16
-              },
-              "sort": "ascending"
-            },
-            "y": {
-              "aggregate": "sum",
-              "field": "signed_people",
-              "title": "Population Migrating",
-              "axis": {
-                "format": "s", 
-                "labelFont": "Consolas", 
-                "titleFontSize": 16,
-                "labelFontWeight": "normal"
-              }
-            },
-            "color": {
-              "field": "status",
-              "scale": {"range": ["royalblue", "#FF4C4C"]},
-              "legend": {
-                "title": "Status",
-                "titleFont": "Consolas",
-                "titleFontSize": 20,
-                "labelFont": "Consolas",
-                "labelFontSize": 16,
-                "symbolSize": 500,
-                "symbolStrokeWidth": 2,
-                "padding": 10,
-                "offset":30,
-                "orient": "right"
-              }
-            },
-            "tooltip": [
-              {"field": "year", "type": "nominal", "title": "Year"},
-              {"field": "quarter", "type": "nominal", "title": "Quarter"},
-              {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ","},
-              {"field": "status", "type": "nominal", "title": "Status"}
-            ]
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year_quarter",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {
+            "title": "Year and Quarter",
+            "labelAngle": 0,
+            "labelOverlap": "parity",
+            "tickCount": 10,
+            "labelFont": "Consolas",
+            "titleFontSize": 16
+          },
+          "sort": "ascending"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "signed_people",
+          "title": "Population Migrating",
+          "axis": {
+            "format": "s",
+            "labelFont": "Consolas",
+            "titleFontSize": 16,
+            "labelFontWeight": "normal"
           }
-      },
-    
+        },
+        "color": {
+          "field": "status",
+          "scale": {"range": ["royalblue", "#FF4C4C"]},
+          "legend": {
+            "title": "Status",
+            "titleFont": "Consolas",
+            "titleFontSize": 20,
+            "labelFont": "Consolas",
+            "labelFontSize": 16,
+            "symbolSize": 500,
+            "symbolStrokeWidth": 2,
+            "padding": 10,
+            "offset": 30,
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {"field": "year", "type": "nominal", "title": "Year"},
+          {"field": "quarter", "type": "nominal", "title": "Quarter"},
+          {"field": "people", "type": "quantitative", "title": "People Immigrating", "format": ","},
+          {"field": "status", "type": "nominal", "title": "Status"}
+        ]
+      }
+    },
     {
       "width": "container",
       "height": 100,
-      "mark": {"type":"area","opacity": 0.5, 
-      "line":{
-        "color":"black",
-        "size":3.5,
-        "shape":"circle"
+      "mark": {
+        "type": "area",
+        "opacity": 0.5,
+        "line": {
+          "color": "black",
+          "size": 3.5,
+          "shape": "circle"
+        },
+        "point": {
+          "color": "black",
+          "size": 50,
+          "shape": "circle"
+        }
       },
-      "point":{
-        "color":"black",
-        "size":50,
-        "shape":"circle"
-      }
-    },
       "params": [
         {
           "name": "brush",
@@ -92,7 +93,7 @@
             "labelAngle": 0,
             "labelOverlap": "parity",
             "tickCount": 10,
-            "labelFont": "Consolas", 
+            "labelFont": "Consolas",
             "titleFontSize": 16
           },
           "sort": "ascending"
@@ -102,18 +103,18 @@
           "field": "signed_people",
           "title": "Population Migrating",
           "axis": {
-            "format": "s", 
-            "labelFont": "Consolas", 
+            "format": "s",
+            "labelFont": "Consolas",
             "titleFontSize": 16
           }
         },
         "color": {
-        "condition": {
-          "test": "datum.status !== null",  
-          "field": "status",
-          "legend": null
-        }
-      },
+          "condition": {
+            "test": "datum.status !== null",
+            "field": "status",
+            "legend": null
+          }
+        },
         "tooltip": [
           {"field": "year", "type": "nominal", "title": "Year"},
           {"field": "quarter", "type": "nominal", "title": "Quarter"},
