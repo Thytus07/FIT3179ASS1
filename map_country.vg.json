@@ -70,15 +70,15 @@
             "range": ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#cc0000", "#660000"]
           },
           "legend": {
-            "titleFont": "Consolas",
+              "titleFont": "Consolas",
               "titleFontSize": 14,
-              "labelFontSize": 12,    
+              "labelFontSize": 12,
               "symbolSize": 200,
               "symbolStrokeWidth": 5,
               "padding": 10,
               "orient": "bottom",
-            "format": "~s"
-          },
+              "format":"~s"
+            },
         "condition":{
           "test":"datum.income < Income_Above",
           "value":"lightgrey"
