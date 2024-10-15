@@ -408,6 +408,66 @@
             "fontSize": {"value": 10}
           }
         }
+      },
+      {
+        "type": "text",
+        "name": "annotation",
+        "encode": {
+          "update": {
+            "x": {"value": 745},  
+            "y": {"value": 40}, 
+            "text": {"value": "USA has the highest "},  
+            "align": {"value": "center"},
+            "baseline": {"value": "top"},
+            "fontSize": {"value": 23},
+            "fill": {"value": "#000000"},
+            "font": {"value": "Consolas"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "name": "annotation1",
+        "encode": {
+          "update": {
+            "x": {"value": 728},  
+            "y": {"value": 63}, 
+            "text": {"value": "migration intake "},  
+            "align": {"value": "center"},
+            "baseline": {"value": "top"},
+            "fontSize": {"value": 23},
+            "fill": {"value": "#000000"},
+            "font": {"value": "Consolas"}
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "name": "line-annotation",
+        "encode": {
+          "update": {
+            "x": {"value": 628}, 
+            "x2": {"value": 855}, 
+            "y": {"value": 90},  
+            "y2": {"value": 90},  
+            "stroke": {"value": "#000000"},  
+            "strokeWidth": {"value": 2}  
+          }
+        }
+      },
+      {
+        "type": "rule",
+        "name": "line-annotation1",
+        "encode": {
+          "update": {
+            "x": {"value": 855}, 
+            "x2": {"value": 950}, 
+            "y": {"value": 90},  
+            "y2": {"value": 170},  
+            "stroke": {"value": "#000000"},  
+            "strokeWidth": {"value": 2}  
+          }
+        }
       }
     ],
     "config": {
